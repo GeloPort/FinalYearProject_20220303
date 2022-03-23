@@ -64,7 +64,7 @@ public class ToolGenerator : MonoBehaviour
     void Start()
     {
         spawningVector = Vector3.zero;
-        DontDestroyOnLoad(newWeaponPrefab.gameObject);
+        DontDestroyOnLoad(this);
     }
 
     public void TestSceneStart()
@@ -140,7 +140,7 @@ public class ToolGenerator : MonoBehaviour
             Destroy(instHandle);
 
         }
-        instHandle = Instantiate(handleParts[arrayPosHandle], spawningVector, Quaternion.identity, newWeapon.transform);
+        instHandle = Instantiate(handleParts[arrayPosHandle], Vector3.zero, Quaternion.identity, newWeapon.transform);
         toolHandle = instHandle.GetComponent<ToolHandle>();
     }
 
