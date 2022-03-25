@@ -1851,5 +1851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToolSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 6124533869052579207, guid: 47bd101ac859137418e776d576624c94,
+        type: 3}
+      propertyPath: m_TagString
+      value: ToolSpawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47bd101ac859137418e776d576624c94, type: 3}

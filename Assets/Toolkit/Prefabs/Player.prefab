@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2422784134116658449}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7144200403121846932}
-  m_RootOrder: 3
+  m_Father: {fileID: 7144200402251510749}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7144200402251510752
 GameObject:
@@ -59,7 +59,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7711804195366499779}
   m_Father: {fileID: 7144200403121846932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -240,7 +241,6 @@ Transform:
   - {fileID: 7144200402251510749}
   - {fileID: 7144200402747775598}
   - {fileID: 7144200403704727526}
-  - {fileID: 7711804195366499779}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,8 +297,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TGen: {fileID: 6124533869052579204, guid: 47bd101ac859137418e776d576624c94, type: 3}
-  newWeapon: {fileID: 0}
+  playerWeapon: {fileID: 0}
   weaponHand: {fileID: 2422784134116658449}
+  iHandle: {fileID: 0}
+  iHead: {fileID: 0}
+  toolHandle: {fileID: 0}
+  selecHead: 0
 --- !u!1 &7144200403704727527
 GameObject:
   m_ObjectHideFlags: 0

@@ -2393,7 +2393,7 @@ PrefabInstance:
     - target: {fileID: 7144200403121846932, guid: 85c8713e5c681654998da37881970803,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 7.815
       objectReference: {fileID: 0}
     - target: {fileID: 7144200403121846932, guid: 85c8713e5c681654998da37881970803,
         type: 3}
@@ -2462,33 +2462,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c8713e5c681654998da37881970803, type: 3}
---- !u!1 &7144200402600412928 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7144200403121846933, guid: 85c8713e5c681654998da37881970803,
-    type: 3}
-  m_PrefabInstance: {fileID: 7144200402600412927}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7144200402600412929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7144200402600412928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7484c3e80bc3f3940b11763c3743f15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TGen: {fileID: 6124533869052579204, guid: 47bd101ac859137418e776d576624c94, type: 3}
-  newWeapon: {fileID: 0}
-  weaponHand: {fileID: 7144200402600412930}
-  iHandle: {fileID: 0}
-  iHead: {fileID: 0}
-  toolHandle: {fileID: 0}
---- !u!1 &7144200402600412930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2422784134116658449, guid: 85c8713e5c681654998da37881970803,
-    type: 3}
-  m_PrefabInstance: {fileID: 7144200402600412927}
-  m_PrefabAsset: {fileID: 0}

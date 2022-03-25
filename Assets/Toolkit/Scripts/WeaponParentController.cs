@@ -7,6 +7,7 @@ public class WeaponParentController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Defines the ToolGenerator as non-destructible to perserve data
         DontDestroyOnLoad(this.gameObject);
     }
 

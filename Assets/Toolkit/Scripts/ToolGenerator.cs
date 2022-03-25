@@ -7,10 +7,6 @@ public class ToolGenerator : MonoBehaviour
 {
     public GameObject[] handleParts;
     public GameObject[] headParts;
-    public Vector3 spawningVector;
-    public GameObject newWeaponPrefab;
-    public GameObject spawnArea;
-    private GameObject newWeapon;
     int arrayPositionHead;
     public int arrayPosHead
     {
@@ -40,7 +36,7 @@ public class ToolGenerator : MonoBehaviour
         get { return arrayPositionHandle; }
         set
         {
-            if( value > handleParts.Length - 1)
+            if (value > handleParts.Length - 1)
             {
                 value = 0;
                 arrayPositionHandle = value;
@@ -56,17 +52,26 @@ public class ToolGenerator : MonoBehaviour
             }
         }
     }
-    public ToolHandle toolHandle;
+
+    public Vector3 spawningVector;
+
+    public GameObject newWeaponPrefab;
+    public GameObject spawnArea;
+    public GameObject newWeapon;
     public GameObject instHandle;
+    public ToolHandle toolHandle;
     public GameObject instHead;
 
+    
     // Start is called before the first frame update
     void Start()
     {
+        // Defines spawningVector as 0, in order to center any items instantiated with it in the BuildingScene and defines the ToolGenerator as non-destructible to perserve data
         spawningVector = Vector3.zero;
         DontDestroyOnLoad(this);
     }
 
+    // Button function to jump to TestingArea (next scene), IF a tool has been created
     public void TestSceneStart()
     {
         if (newWeapon != null)
@@ -75,6 +80,7 @@ public class ToolGenerator : MonoBehaviour
         }
     }
 
+    // Function to verify if there's an already spawned weapon before randomizing it. This deletes the whole object and spawns a new one
     public void CheckWeaponSpawn()
     {
         if(newWeapon!= null)
@@ -85,31 +91,35 @@ public class ToolGenerator : MonoBehaviour
         ToolRandomSpawn();
     }
 
+    // Button function to remove 1 value to the integer of the Head's Array ID and change it for the previous prafab
     public void LastHeadSpawn()
     {
         arrayPosHead--;
-        CreateHead();
+        createWeapon();
     }
 
+    // Button function to add 1 value to the integer of the Head's Array ID and change it for the next prefab
     public void NextHeadSpawn()
     {
         arrayPosHead++;
-        CreateHead();
+        createWeapon();
     }
 
+    // Button function to remove 1 value to the integer of the Handle's Array ID and change it for the previous prafab
     public void LastHandleSpawn()
     {
         arrayPosHandle--;
-        CreateHandle();
+        createWeapon();
     }
 
+    // Button function to add 1 value to the integer of the Handle's Array ID and change it for the next prefab
     public void NextHandleSpawn()
     {
         arrayPosHandle++;
-        CreateHandle();
+        createWeapon();
     }
 
-
+    // Function that randomly spawns a complete object. Is run at the end of CheckWeaponSpawn, in order to verify if there's another weapon when it's executed and destroy it
     public void ToolRandomSpawn()
     {
         newWeapon = Instantiate(newWeaponPrefab, spawningVector, Quaternion.identity, spawnArea.transform);
@@ -118,44 +128,32 @@ public class ToolGenerator : MonoBehaviour
 
         arrayPosHead = getRandomHead();
 
-        CreateHandle();
-        CreateHead();
+        createWeapon();
     }
 
-    int getRandomHandle()
+    // Integer value that is used by ToolRandomSpawn to decide a random value for the Handle Array's ID
+    public int getRandomHandle()
     {
        return Random.Range(0, handleParts.Length);
         
     }
 
-    int getRandomHead()
+    // Integer value that is used by ToolRandomSpawn to decide a random value for the Head Array's ID
+    public int getRandomHead()
     {
         return Random.Range(0, headParts.Length);
     }
 
-    void CreateHandle()
+    // Function that is run everytime a new component is spawned, in order to store information of which components are part of the weapon
+    public void createWeapon()
     {
-        if (instHandle != null)
+        if (newWeapon != null)
         {
-            Destroy(instHandle);
-
+            Destroy(newWeapon);
         }
+        newWeapon = Instantiate(newWeaponPrefab, spawningVector, Quaternion.identity, spawnArea.transform);
         instHandle = Instantiate(handleParts[arrayPosHandle], Vector3.zero, Quaternion.identity, newWeapon.transform);
         toolHandle = instHandle.GetComponent<ToolHandle>();
-    }
-
-    void CreateHead()
-    {
-        if (instHead != null)
-        {
-            Destroy(instHead);
-
-        }
         instHead = Instantiate(headParts[arrayPosHead], toolHandle.headConnection.position, headParts[arrayPosHead].transform.rotation, newWeapon.transform);
     }
 }
-
-/* TO DO LIST -> 
-      - REMOVE RANDOMIZER ELEMENTS 
-      - IMPLEMENT IT WITH UI
-*/
