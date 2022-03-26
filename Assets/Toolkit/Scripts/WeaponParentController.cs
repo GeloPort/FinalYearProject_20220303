@@ -10,10 +10,4 @@ public class WeaponParentController : MonoBehaviour
         // Defines the ToolGenerator as non-destructible to perserve data
         DontDestroyOnLoad(this.gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class ToolHandle : MonoBehaviour
 {
+    //the sole objective of this script is to identify the handle's location to where the head will spawn
     public Transform headConnection;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -18,11 +18,6 @@ public class PlayerWeapon : MonoBehaviour
         spawnPlayerWeapon();       
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     // spawnPlayerWeapon is a script that enables the destruction of the weapon (in case it's modified or something similar) and sets it to the same settings as before
     public void spawnPlayerWeapon()
