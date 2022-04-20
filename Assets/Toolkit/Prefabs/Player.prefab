@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7711804195366499779}
+  - component: {fileID: 3360451723069599929}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -23,13 +24,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2422784134116658449}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.11302984, w: 0.9935916}
+  m_LocalPosition: {x: 0.35, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7144200402251510749}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.98}
+--- !u!95 &3360451723069599929
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422784134116658449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 53af724febfe010429635d0c6ff7de10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7144200402251510752
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,10 +319,6 @@ MonoBehaviour:
   TGen: {fileID: 6124533869052579204, guid: 47bd101ac859137418e776d576624c94, type: 3}
   playerWeapon: {fileID: 0}
   weaponHand: {fileID: 2422784134116658449}
-  iHandle: {fileID: 0}
-  iHead: {fileID: 0}
-  toolHandle: {fileID: 0}
-  selecHead: 0
 --- !u!1 &7144200403704727527
 GameObject:
   m_ObjectHideFlags: 0

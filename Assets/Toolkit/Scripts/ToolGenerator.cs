@@ -62,6 +62,8 @@ public class ToolGenerator : MonoBehaviour
     public ToolHandle toolHandle;
     public GameObject instHead;
 
+    public GameObject WarningText;
+
     
     // Start is called before the first frame update
     void Start()
@@ -77,6 +79,10 @@ public class ToolGenerator : MonoBehaviour
         if (newWeapon != null)
         {
             SceneManager.LoadScene("TestingArea");
+        }
+        else
+        {
+            WarningText.SetActive(true);
         }
     }
 
