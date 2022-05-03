@@ -79,6 +79,7 @@ public class ToolGenerator : MonoBehaviour
         if (newWeapon != null)
         {
             SceneManager.LoadScene("TestingArea");
+            spawnArea.SetActive(false);
         }
         else
         {

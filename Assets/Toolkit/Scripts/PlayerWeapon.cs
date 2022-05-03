@@ -9,10 +9,11 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject weaponHand;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-        // Defines TGen as the DontDestroyOnLoadScene iteration, in order to not be confused with its prefab
+        // Defines TGen as the DontDestroyOnLoadScene iteration, in order to not be confused with its prefab and defines a spawn location for the weaponBlender Function
         TGen = GameObject.FindGameObjectWithTag("ToolSpawner").GetComponent<ToolGenerator>();
 
         spawnPlayerWeapon();       
@@ -36,9 +37,10 @@ public class PlayerWeapon : MonoBehaviour
 
 
     // weaponHeadBlender is a script that randomizes the player weapon's head component, by obtaining the int value of the array to which heads belong to, randomizing it and respawning it
-    void weaponHeadBlender()
+    public void weaponBlender()
     {
         TGen.arrayPosHead = TGen.getRandomHead();
+        TGen.arrayPosHandle = TGen.getRandomHandle();
         TGen.createWeapon();
         spawnPlayerWeapon();
     }

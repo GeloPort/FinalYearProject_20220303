@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3871097904066790565}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponGameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 10;
 
     Vector3 velocity;
+    Vector3 lastPos;
     public float gravity = -9.1f;
+
+    public Animator handAnim;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -17,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     public float jumpHeight = 3f;
 
+    public bool isTeleporting = false;
+    bool playWalking;
+    bool playIdle;
+
+    private void Start()
+    {
+        handAnim.Play("IdleAnim");
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +36,28 @@ public class PlayerMovement : MonoBehaviour
         GroundCheck();
         Jump();
         SprintMove();
+
+        if(transform.position != lastPos)
+        {
+            if (playWalking)
+            {
+                handAnim.CrossFade("WalkAnim", 0.1f);
+                playWalking = false;
+            }
+            playIdle = true;
+
+        }
+        else
+        {
+            if (playIdle)
+            {
+                handAnim.CrossFade("IdleAnim", 0.1f);
+                playIdle = false;
+            }
+            playWalking = true;
+        }
+        lastPos = transform.position;
+
     }
 
 

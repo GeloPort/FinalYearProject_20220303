@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4586358965118508500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GreatswordBlade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,10 +108,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5056c7e7ed23c40439d60a710a3d04ce,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8db9af239cdbb1c4e80b58dbf8a16857, type: 2}
     - target: {fileID: 919132149155446097, guid: 5056c7e7ed23c40439d60a710a3d04ce,
         type: 3}
       propertyPath: m_Name
       value: GSBladeMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5056c7e7ed23c40439d60a710a3d04ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5056c7e7ed23c40439d60a710a3d04ce, type: 3}
