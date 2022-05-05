@@ -10,6 +10,7 @@ public class WeaponRandomizer : MonoBehaviour
 
     public BoxCollider bCol;
     public MeshRenderer mRend;
+    public AudioSource anvilHit;
 
     public bool isActive = true;
 
@@ -31,6 +32,7 @@ public class WeaponRandomizer : MonoBehaviour
     {
         isActive = false;
         StartCoroutine("sphereCooldown");
+        anvilHit.Play();
         pWeapon.weaponBlender();
         //flashEffect's alpha value goes to max and Mathf.Lerps back down to hide what happened. weaponBlender() might have to be run in last to make sure everything works
     }

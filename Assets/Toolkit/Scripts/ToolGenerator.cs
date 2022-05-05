@@ -53,6 +53,8 @@ public class ToolGenerator : MonoBehaviour
         }
     }
 
+    bool warningControl;
+
     public Vector3 spawningVector;
 
     public GameObject newWeaponPrefab;
@@ -61,8 +63,8 @@ public class ToolGenerator : MonoBehaviour
     public GameObject instHandle;
     public ToolHandle toolHandle;
     public GameObject instHead;
-
-    public GameObject WarningText;
+    public GameObject warningText;
+    public AudioSource anvilNoise;
 
     
     // Start is called before the first frame update
@@ -83,7 +85,8 @@ public class ToolGenerator : MonoBehaviour
         }
         else
         {
-            WarningText.SetActive(true);
+            warningText.SetActive(true);
+            warningControl = true;
         }
     }
 
@@ -103,6 +106,8 @@ public class ToolGenerator : MonoBehaviour
     {
         arrayPosHead--;
         createWeapon();
+        anvilNoise.Play();
+        warningOff();
     }
 
     // Button function to add 1 value to the integer of the Head's Array ID and change it for the next prefab
@@ -110,6 +115,8 @@ public class ToolGenerator : MonoBehaviour
     {
         arrayPosHead++;
         createWeapon();
+        anvilNoise.Play();
+        warningOff();
     }
 
     // Button function to remove 1 value to the integer of the Handle's Array ID and change it for the previous prafab
@@ -117,6 +124,8 @@ public class ToolGenerator : MonoBehaviour
     {
         arrayPosHandle--;
         createWeapon();
+        anvilNoise.Play();
+        warningOff();
     }
 
     // Button function to add 1 value to the integer of the Handle's Array ID and change it for the next prefab
@@ -124,6 +133,8 @@ public class ToolGenerator : MonoBehaviour
     {
         arrayPosHandle++;
         createWeapon();
+        anvilNoise.Play();
+        warningOff();
     }
 
     // Function that randomly spawns a complete object. Is run at the end of CheckWeaponSpawn, in order to verify if there's another weapon when it's executed and destroy it
@@ -132,10 +143,12 @@ public class ToolGenerator : MonoBehaviour
         newWeapon = Instantiate(newWeaponPrefab, spawningVector, Quaternion.identity, spawnArea.transform);
 
         arrayPosHandle = getRandomHandle();
-
         arrayPosHead = getRandomHead();
 
         createWeapon();
+
+        anvilNoise.Play();
+        warningOff();
     }
 
     // Integer value that is used by ToolRandomSpawn to decide a random value for the Handle Array's ID
@@ -162,5 +175,13 @@ public class ToolGenerator : MonoBehaviour
         instHandle = Instantiate(handleParts[arrayPosHandle], Vector3.zero, Quaternion.identity, newWeapon.transform);
         toolHandle = instHandle.GetComponent<ToolHandle>();
         instHead = Instantiate(headParts[arrayPosHead], toolHandle.headConnection.position, headParts[arrayPosHead].transform.rotation, newWeapon.transform);
+    }
+
+    public void warningOff()
+    {
+        if(warningControl == true)
+        {
+            warningText.SetActive(false);
+        }
     }
 }
