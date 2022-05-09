@@ -177,6 +177,7 @@ public class ToolGenerator : MonoBehaviour
         instHead = Instantiate(headParts[arrayPosHead], toolHandle.headConnection.position, headParts[arrayPosHead].transform.rotation, newWeapon.transform);
     }
 
+    //Toggles off the warningText on click of any of the buttons that create th weapon, if said text has been toggled on
     public void warningOff()
     {
         if(warningControl == true)

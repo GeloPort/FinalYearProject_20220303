@@ -5,25 +5,25 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public LayerMask groundMask;
+    public Transform groundCheck;
+    public Animator handAnim;
+
     public float movementSpeed = 5;
     public float sprintSpeed = 10;
+    public float gravity = -9.1f;
+    public float groundDistance = 0.4f;
+    public float jumpHeight = 3f;
 
     Vector3 velocity;
     Vector3 lastPos;
-    public float gravity = -9.1f;
-
-    public Animator handAnim;
-
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-    bool isGrounded;
-    public float jumpHeight = 3f;
 
     public bool isTeleporting = false;
+    bool isGrounded;
     bool playWalking;
     bool playIdle;
 
+    //Starts the scene with the IdleAnim as the default animation
     private void Start()
     {
         handAnim.Play("IdleAnim");
@@ -37,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         SprintMove();
 
+
+        //In order to know which animation to play, the script checks if the player is moving or not, by making sure his current position does not equal its last,
+        //while defining the current position as the last at the end of the frame
         if(transform.position != lastPos)
         {
             if (playWalking)
