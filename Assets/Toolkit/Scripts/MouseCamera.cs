@@ -30,7 +30,7 @@ public class MouseCamera : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
 
-        //rotates the player's body when moving on the X axis
+        //rotates the player's body when moving the mouse on the X axis
         playerBody.Rotate(Vector3.up * mouseX);
 
     }

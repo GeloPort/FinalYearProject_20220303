@@ -278,9 +278,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c301a1688baa61b4b952a37084acbc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyClose: 0
   attackAnim: {fileID: 0}
   attackHit: {fileID: 118974302565980863}
+  attackMiss: {fileID: 0}
+  staminaBar: {fileID: 0}
+  AttackText: {fileID: 0}
 --- !u!1 &7144200402251510752
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,16 +530,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7144200403121846931}
-  movementSpeed: 5
-  sprintSpeed: 10
-  gravity: -9.1
-  handAnim: {fileID: 0}
-  groundCheck: {fileID: 7144200403704727526}
-  groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+  groundCheck: {fileID: 7144200403704727526}
+  handAnim: {fileID: 0}
+  movementSpeed: 5
+  sprintSpeed: 10
+  gravity: -9.1
+  groundDistance: 0.4
   jumpHeight: 1
+  isTeleporting: 0
 --- !u!114 &6817942848939740764
 MonoBehaviour:
   m_ObjectHideFlags: 0
