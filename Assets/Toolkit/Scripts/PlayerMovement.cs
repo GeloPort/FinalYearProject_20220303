@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         SprintMove();
 
 
-        //In order to know which animation to play, the script checks if the player is moving or not, by making sure his current position does not equal its last,
+        //In order to know which animation to play, the script checks if the player is moving or not, by making sure his current position does not equal its last, as it can be seen in the differences between playWalking and playIdle
         //while defining the current position as the last at the end of the frame
         if(transform.position != lastPos)
         {
